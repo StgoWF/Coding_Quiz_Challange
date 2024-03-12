@@ -54,7 +54,7 @@ body {
   
   /* Answer buttons styling */
   button {
-    background-color: #5a67d8;
+    background-color: #510368;
     color: #ffffff;
     border: none;
     margin: 0.5rem;
@@ -108,4 +108,31 @@ body {
 }
 .hidden {
     display: none;
+}
+
+/* This makes each button a block-level element, causing them to stack vertically */
+#answerChoices button {
+    display: block; 
+    /* Adds some space between buttons */
+    margin: 10px 0; 
+    /* Optional: Makes each button extend the full width of its container */
+    width: 20%;
+    /* Add other styles as needed for padding, borders, etc. */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+
+
+/* Hover effect for buttons */
+#answerChoices button:hover {
+    background-color: #b82bc4; /* Replace with the color you want on hover */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    /* Add other styles as needed for hover effect */
+}
+
+/* Setting the width of the question container to 70% of its parent element */
+#questionContainer {
+    width: 60%;
+    margin: 0 auto; /* Centers the container in the middle of the page */
+    /* Additional styles can be added as needed */
 }

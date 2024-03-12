@@ -84,14 +84,19 @@ function startQuiz() {
     setNextQuestion();
 }
 
-// Update the timer
+
+
+// Update the timer and display it
 function updateTimer() {
-    timer--;
-    timeLeft.textContent = timer;
+    timer--; // Decrement the timer by one second
     if (timer <= 0) {
-        endQuiz();
+        timer = 0; // Ensure the timer does not go below zero
+        endQuiz(); // Call endQuiz function to handle the end of the quiz
     }
+    timeLeft.textContent = timer; // Update the display with the new timer value
 }
+
+
 
 // Show the next question
 function setNextQuestion() {
@@ -281,4 +286,26 @@ document.getElementById('viewHighScores').addEventListener('click', function(e) 
     document.getElementById('highScores').classList.remove('hidden');
     document.getElementById('quizIntro').classList.add('hidden');
     
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the Start Quiz button exists before adding the event listener
+    const startButton = document.getElementById('startBtn');
+    if (startButton) {
+        startButton.addEventListener('click', function() {
+            // Hide the quiz description div when the Start Quiz button is clicked
+            const quizDescription = document.getElementById('quizDescription');
+            if (quizDescription) {
+                quizDescription.classList.add('hidden');
+            }
+            // Ensure the quiz content is shown (if it's hidden by default)
+            const mainContent = document.getElementById('mainContent');
+            if (mainContent) {
+                mainContent.classList.remove('hidden');
+            }
+            // Start the quiz functionality
+            startQuiz();
+        });
+    }
 });
