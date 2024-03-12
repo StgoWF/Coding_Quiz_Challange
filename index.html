@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#" id="viewHighScores">View high scores</a>
+        <div id="timer">Time: <span id="timeLeft">0</span> seconds</div>
+    </header>
+    <main id="mainContent"> <!-- This will be hidden initially -->
+        <h1>Coding Quiz Challenge</h1>
+        <!-- Message below the title -->
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+        <!-- Start button -->
+        <button id="startBtn">Start Quiz</button>
+        <!-- Sections for questions and end of quiz -->
+        <section id="questionContainer" class="hidden">
+            <h2 id="questionTitle"></h2>
+            <ul id="answerChoices"></ul>
+        </section>
+        <section id="quizEnd" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score is <span id="finalScore"></span>.</p>
+            <form id="scoreForm">
+                <label for="userInitials">Enter initials:</label>
+                <input type="text" id="userInitials" name="userInitials" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="highScores" class="hidden">
+            <h2>High Scores</h2>
+            <ul id="scoreList"></ul>
+            <button id="goBackBtn">Go Back</button>
+            <button id="clearScoresBtn">Clear High Scores</button>
+        </section>
+    </main>
+
+    <script src="./assets/js/sript.js"></script>
+</body>
+</html>
