@@ -148,6 +148,21 @@ body {
     margin: 0 auto; /* Centers the container in the middle of the page */
     /* Additional styles can be added as needed */
 }
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    #answerChoices button {
+        width: 80%; /* Increase width for smaller screens */
+       
+    }
+}
+
+/* Adjust the width of the question container for small screens */
+@media screen and (max-width: 600px) {
+    #questionContainer {
+        width: 80%; 
+        
+    }
+}
 
 
 
