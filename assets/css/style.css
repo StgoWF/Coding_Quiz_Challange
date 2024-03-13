@@ -149,7 +149,7 @@ body {
     /* Additional styles can be added as needed */
 }
 /* Responsive styles */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1179px) {
     #answerChoices button {
         width: 80%; /* Increase width for smaller screens */
        
@@ -157,7 +157,7 @@ body {
 }
 
 /* Adjust the width of the question container for small screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1179px) {
     #questionContainer {
         width: 80%; 
         
