@@ -11,10 +11,10 @@ The Coding Quiz Challenge is an interactive web application designed to test you
 
 ## Screenshot
 
-![Coding Quiz Challenge Screenshot](path-to-your-screenshot.png)
+![Coding Quiz Challenge Screenshot](./assets/images/codingscreenshot.png)
 
 ## Deployment
-Experience the live application [here](your-live-site-link).
+Experience the live application [here](https://stgowf.github.io/Coding_Quiz_Challange/).
 
 ## Getting Started
 To set up the quiz locally:
