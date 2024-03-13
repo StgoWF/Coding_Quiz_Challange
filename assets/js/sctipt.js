@@ -144,8 +144,10 @@ function endQuiz() {
 function displayHighScores() {
     // Retrieve scores from local storage or set to an empty array if none found
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
     // Get the high scores list element
-    const highScoresList = document.getElementById('highScores');
+    const highScoresList = document.getElementById('scoreList');
+    
     // Sort scores in descending order
     highScores.sort((a, b) => b.score - a.score);
 
@@ -154,11 +156,22 @@ function displayHighScores() {
         .map(score => `<li>${score.initials} - ${score.score}</li>`)
         .join('');
 
-    // Display the high scores
+    // Display the high scores and hide the quiz end section
     highScoresSection.classList.remove('hidden');
+    quizEnd.classList.add('hidden'); // Hide the quiz end section
 
+    // Make sure buttons are visible
+    document.getElementById('goBackBtn').classList.remove('hidden');
+    document.getElementById('clearScoresBtn').classList.remove('hidden');
 
+    // Hide the "View high scores" link and "Time left" in the header
+    document.getElementById('viewHighScores').classList.add('hidden');
+    document.getElementById('timer').classList.add('hidden');
+
+    // Hide the "Quiz Completed" section
+    document.getElementById('quizEnd').classList.add('hidden');
 }
+
 // Handle high score submission
 function saveHighScore(e) {
     e.preventDefault();
@@ -191,11 +204,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
 });
 
 // Handling clicks on the "Go Back" button
-document.getElementById('goBackBtn').addEventListener('click', () => {
-    // Hide the high scores and show the main quiz intro
-    document.getElementById('highScores').classList.add('hidden');
-    document.getElementById('quizIntro').classList.remove('hidden');
+document.getElementById('goBackBtn').addEventListener('click', function() {
+    // Reload the page to reset the state
+    window.location.reload();
 });
+
 // Listen for submit event on score form
 scoreForm.addEventListener('submit', saveHighScore);
 
@@ -212,15 +225,16 @@ document.getElementById('clearScoresBtn').addEventListener('click', () => {
 // Function to load and display high scores from localStorage
 function loadHighScores() {
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-    // Clear the list
-    highScoresList.innerHTML = ''; // Use highScoresList instead of highScores
-    // Create a list item for each score and append it to the list
-    highScores.forEach(score => {
+    const highScoresList = document.getElementById('scoreList');
+    highScoresList.innerHTML = ''; // Clear existing list
+
+    highScores.forEach((score, index) => {
         const scoreItem = document.createElement('li');
-        scoreItem.textContent = `${score.initials} - ${score.score}`;
-        highScoresList.appendChild(scoreItem); // Append to highScoresList, not highScores
+        scoreItem.textContent = `${index + 1}. ${score.initials} - ${score.score}`;
+        highScoresList.appendChild(scoreItem);
     });
 }
+
 
 
 // Function to clear high scores from localStorage and the screen
@@ -284,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('viewHighScores').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('highScores').classList.remove('hidden');
-    document.getElementById('quizIntro').classList.add('hidden');
+    document.getElementById('quizIntro').classList.add('hidden'); 
     
 });
 

@@ -5,7 +5,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
   }
   
   /* Header styling */
@@ -64,6 +64,16 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
   }
+  li {
+    background-color: #dcd3ee; /* Light grey background */
+    margin: 10px 0; /* Spacing between items */
+    padding: 10px; /* Padding inside each item */
+    list-style-type: none; /* Remove default list styling */
+    margin-left: auto; /* Centers the element horizontally */
+    margin-right: auto; /* Centers the element horizontally */
+    width: 45%;
+    text-align: left;
+}
   
   /* Answer buttons hover effect */
   button:hover {
@@ -119,6 +129,8 @@ body {
     width: 20%;
     /* Add other styles as needed for padding, borders, etc. */
     transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    margin-left: auto; /* Centers the element horizontally */
+    margin-right: auto; /* Centers the element horizontally */
 }
 
 
@@ -136,3 +148,6 @@ body {
     margin: 0 auto; /* Centers the container in the middle of the page */
     /* Additional styles can be added as needed */
 }
+
+
+
